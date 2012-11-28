@@ -14,7 +14,11 @@ body{
 	width: 500px;
 	margin: 0 auto 0 auto;
 	background: #444;
-	overflow: hidden;
+	overflow-x: hidden;
+}
+
+@media (max-width: 720px) {
+  body { width: 100%; }
 }
 
 #content{
@@ -27,11 +31,12 @@ body{
 }
 
 #page{
+	padding: 15px 35px 15px 15px;
+	margin-top: 1px;
 	height: auto !important;
 	height: 100%; 
 	min-height: 100%;
-	background: white;
-	padding: 15px 0 0 15px;
+	background: #e5d2a7;
 }
 
 #header{
@@ -61,4 +66,30 @@ body{
 
 h3{
 	font-family: "Lato","Helvetica",sans-serif;
+	color: #3f3f3f;
+}
+
+#splitLine{
+	height: 2px;
+	width: 100%;
+	background: -webkit-linear-gradient(top left, #b7b7b7 0.33%, #e5d2a7 78.48%);
+	background: -o-linear-gradient(top left, #b7b7b7 0.33%, #e5d2a7 78.48%);
+	display: block;
+	margin-bottom: 20px;
+}
+
+.image{
+	display: block;
+	height: 125px;
+	width: 125px;
+	background-image: url("picture/noel.jpg");
+	border: solid;
+}
+
+.recipe{
+	background: white;
+	padding: 8px;
+	margin-bottom: 20px;
+	width: 100%;
+	box-shadow: 1px 3px 8px black
 }
