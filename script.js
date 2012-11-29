@@ -66,6 +66,7 @@ for(var i =0 ; i < checkList.length; i++){
 }
 
 document.getElementById("menuButton").addEventListener("click", function (event) {goToMenu(event)}, false); 
-document.getElementById("menuButton").addEventListener("click", function(event){goToMenu(event); event.preventDefault();}, false); 
+document.getElementById("menuButton").addEventListener("touch", function(event){goToMenu(event); event.preventDefault();}, false); 
 
-document.body.addEventListener("mousedown", backToContent ,false);
+document.getElementById("content").addEventListener("mousedown", backToContent ,false);
+document.getElementById("content").addEventListener("touchstart", backToContent ,false);
