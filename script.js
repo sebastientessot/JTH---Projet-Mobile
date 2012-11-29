@@ -1,7 +1,7 @@
 
 var menuIsVisible = false;
 var recipesList = document.getElementsByClassName("recipe");
-var checkList  = document.getElementsByTagName("li");
+var checkList  = document.getElementsByClassName("checkButton");
 
 function goToMenu(event){
 	if(menuIsVisible == false){
@@ -43,8 +43,15 @@ function goToPage(elmt){
 }
 
 function checkTheBox(elmt){
-	elmt.setAttribute("style", "background-image: url(\"picture/Check.png\"); background-size: cover;");
-	elmt.innerHTML = "";
+	if(elmt.style.backgroundImage == ""){
+		elmt.setAttribute("style", "background-image: url(\"picture/Check.png\"); background-size: cover;");
+		elmt.style.border = "solid 1px green";
+		elmt.innerHTML = "";
+	}else{
+		elmt.style.backgroundImage = "";
+		elmt.innerHTML = "Done";
+		elmt.style.border = "solid 1px black";
+	}
 }
 
 
