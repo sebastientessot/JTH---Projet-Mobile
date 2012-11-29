@@ -16,7 +16,12 @@ body{
 	background: #444;
 	overflow-x: hidden;
 }
-
+li{
+	padding-left: 15px; 
+	padding-top: 30px; 
+	list-style-position: inside;
+	list-style-type: disc;
+}
 @media (max-width: 720px) {
   body { width: 100%; }
 }
@@ -84,6 +89,7 @@ h3{
 	width: 125px;
 	background-image: url("picture/noel.jpg");
 	border: solid;
+	float: left; 
 }
 
 .recipe{
@@ -91,5 +97,55 @@ h3{
 	padding: 8px;
 	margin-bottom: 20px;
 	width: 100%;
-	box-shadow: 1px 3px 8px black
+	height: 130px; 
+	box-shadow: 1px 3px 8px black;
+}
+.recipeTitle{
+	font: bold large sans-serif;
+	padding-left: 142px; 
+	vertical-align: top;
+	text-align: center; 
+}
+.recipeDescription{
+	padding-left: 142px; 
+	
+}
+.totalRecipe{
+	background: white;
+	padding: 8px;
+	margin-bottom: 20px;
+	width: 100%;
+	box-shadow: 1px 3px 8px black;
+	}
+
+.bigImage{
+	display: block;
+	height: 175px;
+	margin: 7px; 
+	width: 125px;
+	background-image: url("picture/noel.jpg");
+	border: solid;
+	float: left;
+}
+
+.titleRecipe{
+	height: 100px; 
+	padding-top: 75px; 
+	text-align: center; 
+	font: bold large sans-serif;
+}
+
+.textRecipe{
+ }
+
+.checkButton{
+	float: right;
+	height: 32px;
+	width: 32px; 
+}
+.endRecipe{
+	
+	font: bold large cursive;
+	padding-top: 25px; 
+	text-align: center; 
 }
