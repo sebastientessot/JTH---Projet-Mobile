@@ -18,9 +18,9 @@ body{
 }
 li{
 	padding-left: 15px; 
-	padding-top: 30px; 
+	padding-bottom: 20px; 
 	list-style-position: inside;
-	list-style-type: disc;
+	list-style-type: decimal;
 }
 @media (max-width: 720px) {
   body { width: 100%; }
@@ -153,8 +153,7 @@ h3{
 }
 
 .titleRecipe{
-	height: 100px; 
-	padding-top: 75px; 
+	padding-top: 15px; 
 	text-align: center; 
 	font: bold large sans-serif;
 }
@@ -177,4 +176,43 @@ h3{
 	font: bold large cursive;
 	padding-top: 25px; 
 	text-align: center; 
+}
+.ingredientRecipe{
+	padding-top: 20px; 
+	min-height: 125px; 
+}
+.ingredient{
+	padding-bottom: 0px;
+	list-style-type: circle;
+}
+
+.sectionTitle{
+	text-decoration: underline; 
+	padding-bottom: 5px;
+}
+
+#chrono{
+	position: fixed;
+	height: 50px; 
+	width: 50%;
+	left: 25%;
+	background: #000000;
+	z-index: 9999999; 
+	border-radius: 15px 15px 0 0;
+	bottom: 0;
+	opacity: 0.8;
+}
+#chronoText{
+	color: white; 
+	padding-top: 7px; 
+	padding-left: 5px;
+	font-family: sans-serif;
+	font-size: small;
+}
+#chronoNumber{
+	color: white; 
+	padding-top: 5px; 
+	font-family: sans-serif;
+	font-size: smaller;
+	text-align: center
 }

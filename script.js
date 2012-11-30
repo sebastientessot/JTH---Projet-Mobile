@@ -2,6 +2,8 @@ var menuIsVisible = false;
 var recipesList = document.getElementsByClassName("recipe");
 var checkList  = document.getElementsByClassName("checkButton");
 
+document.getElementById("chrono").style.display = 'none'; 
+
 function goToMenu(event){
 	if(menuIsVisible == false){
 		document.getElementById("content").style.left = "88%";
@@ -53,6 +55,7 @@ function goToPage(event){
 }
 
 function checkTheBox(elmt){
+	
 	if(elmt.style.backgroundImage == ""){
 		elmt.setAttribute("style", "background-image: url(\"picture/Check.png\"); background-size: cover;");
 		elmt.style.border = "solid 1px green";
@@ -62,6 +65,30 @@ function checkTheBox(elmt){
 		elmt.innerHTML = "Done";
 		elmt.style.border = "solid 1px black";
 	}
+}
+
+var hours ; 
+var min; 
+var sec; 
+function startTheChrono(time){
+var output = document.getElementById("chronoNumber");
+
+	if(output.innerHTML == 123456) {
+		document.getElementById("chrono").style.display = "block"; 
+		
+		hours = parseInt(time/3600); 
+		min = parseInt((time-hours*3600)/60);
+		sec = parseInt(time - hours*3600 - min*60); 
+	 }
+	 else {
+	 	hours = hours;
+	 	min = min; 
+	 	sec = sec -1;
+	 }
+	 output.innerHTML = hours + "h " + min + "min " + sec + "sec";
+// Gerer les sec min et h négatives
+// lancer le chrono	 
+//	 setTimeout(startTheChrono(0), 1000); 
 }
 
 function subscribe(){
@@ -75,8 +102,12 @@ function subscribe(){
 }
 
 for(var i =0 ; i < checkList.length; i++){
-	checkList[i].addEventListener("touch", function (event){checkTheBox(event.target);}, false); 	
-	checkList[i].addEventListener("click", function (event){checkTheBox(event.target);}, false);
+	checkList[i].addEventListener("touch", function (event){checkTheBox(event.target);
+		startTheChrono(10000); 
+	}, false); 	
+	checkList[i].addEventListener("click", function (event){checkTheBox(event.target);
+		startTheChrono(10000); 
+	}, false);
 }
 
 subscribe();
