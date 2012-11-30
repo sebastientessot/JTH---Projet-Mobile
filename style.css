@@ -13,7 +13,7 @@ html, body{
 body{
 	width: 500px;
 	margin: 0 auto 0 auto;
-	background: #444;
+	background: #333;
 	overflow-x: hidden;
 }
 li{
@@ -24,6 +24,7 @@ li{
 }
 @media (max-width: 720px) {
   body { width: 100%; }
+  #menu { width: 100%; }
 }
 
 #content{
@@ -33,6 +34,7 @@ li{
 	min-height: 100%;
 	background: #e5d2a7;
 	-webkit-transition: left 1s;
+	z-index: 2;
 }
 
 #page{
@@ -67,6 +69,27 @@ li{
 	text-align: left;
 	top: 0px;
 	left: 20px;
+}
+
+#menu{
+	width: 500px;
+	position: absolute;
+	z-index: 1;
+}
+
+#search{
+	width: 100%;
+	padding: 10px;
+}
+
+#search input{
+	background-color: #444;
+	color: #aaa;
+	border: solid 1px #aaa;
+	padding-left: 15px;
+	height: 20px;
+	border-radius: 10px;
+	width: 80%;
 }
 
 h3{

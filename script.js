@@ -1,4 +1,3 @@
-
 var menuIsVisible = false;
 var recipesList = document.getElementsByClassName("recipe");
 var checkList  = document.getElementsByClassName("checkButton");
@@ -8,6 +7,11 @@ function goToMenu(event){
 		document.getElementById("content").style.left = "88%";
 		document.body.style.overflowY = "hidden";
 		menuIsVisible = true;
+		
+		for(var i =0 ; i < recipesList.length; i++){
+			recipesList[i].removeEventListener("click", goToPage, false);
+			recipesList[i].removeEventListener("touch", goToPage, false);
+		}
 	}
 	event.preventDefault();
 }
@@ -16,12 +20,17 @@ function backToContent(event){
 	if(menuIsVisible){
 		document.getElementById("content").style.left = "0";
 		document.body.style.overflowY = "visible";
-		menuIsVisible = false;	
+		
+		event.preventDefault();
+		
+		subscribe();
+		menuIsVisible = false;
 	}
 	event.preventDefault();
 }
 
-function goToPage(elmt){
+function goToPage(event){
+	var elmt = event.target;
 	while(elmt.getAttribute('class') != "recipe"){
 		elmt = elmt.parentNode;
 	}
@@ -40,6 +49,7 @@ function goToPage(elmt){
 	if(elmt.getAttribute("id") == 5 ){
 		window.location = "recipe5.html";
 	}
+	event.preventDefault();
 }
 
 function checkTheBox(elmt){
@@ -54,19 +64,22 @@ function checkTheBox(elmt){
 	}
 }
 
-
-for(var i =0 ; i < recipesList.length; i++){
-	recipesList[i].addEventListener("touch", function (event){goToPage(event.target);event.preventDefault();}, false); 	
-	recipesList[i].addEventListener("click", function (event){goToPage(event.target);}, false); 	
+function subscribe(){
+	for(var i =0 ; i < recipesList.length; i++){
+		recipesList[i].addEventListener("touch", goToPage, false); 	
+		recipesList[i].addEventListener("click", goToPage, false); 	
+	}
+	
+	document.getElementById("menuButton").addEventListener("click", function (event) {goToMenu(event)}, false); 
+	document.getElementById("menuButton").addEventListener("touch", function(event){goToMenu(event); event.preventDefault();}, false); 
 }
 
 for(var i =0 ; i < checkList.length; i++){
-	checkList[i].addEventListener("touch", function (event){checkTheBox(event.target);event.preventDefault();}, false); 	
-	checkList[i].addEventListener("click", function (event){checkTheBox(event.target);}, false); 	
+	checkList[i].addEventListener("touch", function (event){checkTheBox(event.target);}, false); 	
+	checkList[i].addEventListener("click", function (event){checkTheBox(event.target);}, false);
 }
 
-document.getElementById("menuButton").addEventListener("click", function (event) {goToMenu(event)}, false); 
-document.getElementById("menuButton").addEventListener("touch", function(event){goToMenu(event); event.preventDefault();}, false); 
+subscribe();
 
 document.getElementById("content").addEventListener("mousedown", backToContent ,false);
 document.getElementById("content").addEventListener("touchstart", backToContent ,false);
