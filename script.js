@@ -86,8 +86,9 @@ var output = document.getElementById("chronoNumber");
 	 	sec = sec -1;
 	 }
 	 output.innerHTML = hours + "h " + min + "min " + sec + "sec";
-// Gerer les sec min et h négatives
-// lancer le chrono	 
+	 
+	setTimeout(startTheChrono, 1000); 
+// Gerer les sec min et h négatives	 
 //	 setTimeout(startTheChrono(0), 1000); 
 }
 
@@ -103,10 +104,10 @@ function subscribe(){
 
 for(var i =0 ; i < checkList.length; i++){
 	checkList[i].addEventListener("touch", function (event){checkTheBox(event.target);
-		startTheChrono(10000); 
+		startTheChrono(100); 
 	}, false); 	
 	checkList[i].addEventListener("click", function (event){checkTheBox(event.target);
-		startTheChrono(10000); 
+		startTheChrono(100); 
 	}, false);
 }
 
