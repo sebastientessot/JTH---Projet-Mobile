@@ -3,7 +3,7 @@ var recipesList = document.getElementsByClassName("recipe");
 
 function goToMenu(event){
 	if(menuIsVisible == false){
-		document.getElementById("content").style.left = "88%";
+		document.getElementById("content").style.left = "85%";
 		document.body.style.overflowY = "hidden";
 		menuIsVisible = true;
 		

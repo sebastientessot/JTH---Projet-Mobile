@@ -1,22 +1,24 @@
 function goToPage(event){
-	var elmt = event.target;
-	while(elmt.getAttribute('class') != "recipe"){
-		elmt = elmt.parentNode;
-	}
-	if(elmt.getAttribute("id") == 1 ){
-		window.location = "recipe1.html";
-	}
-	if(elmt.getAttribute("id") == 2 ){
-		window.location = "recipe2.html";
-	}
-	if(elmt.getAttribute("id") == 3 ){
-		window.location = "recipe3.html";
-	}
-	if(elmt.getAttribute("id") == 4 ){
-		window.location = "recipe4.html";
-	}
-	if(elmt.getAttribute("id") == 5 ){
-		window.location = "recipe5.html";
+	if(document.getElementById("content").style.left == "0px"){
+		var elmt = event.target;
+		while(elmt.getAttribute('class') != "recipe"){
+			elmt = elmt.parentNode;
+		}
+		if(elmt.getAttribute("id") == 1 ){
+			window.location = "recipe1.html";
+		}
+		if(elmt.getAttribute("id") == 2 ){
+			window.location = "recipe2.html";
+		}
+		if(elmt.getAttribute("id") == 3 ){
+			window.location = "recipe3.html";
+		}
+		if(elmt.getAttribute("id") == 4 ){
+			window.location = "recipe4.html";
+		}
+		if(elmt.getAttribute("id") == 5 ){
+			window.location = "recipe5.html";
+		}
 	}
 	event.preventDefault();
 }

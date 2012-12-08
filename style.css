@@ -22,10 +22,6 @@ li{
 	list-style-position: inside;
 	list-style-type: decimal;
 }
-@media (max-width: 720px) {
-  body { width: 100%; }
-  #menu { width: 100%; }
-}
 
 #content{
 	position: relative;
@@ -35,6 +31,7 @@ li{
 	background: #e5d2a7;
 	-webkit-transition: left 1s;
 	z-index: 2;
+	left: 0px;
 }
 
 #page{
@@ -66,7 +63,6 @@ li{
 	width: 25px;
 	position: relative;
 	float: left;
-	text-align: left;
 	top: 2px;
 	left: 20px;
 }
@@ -78,7 +74,6 @@ li{
 }
 
 #search{
-	width: 100%;
 	padding: 12px;
 }
 
@@ -285,4 +280,17 @@ h3{
 	font-family: sans-serif;
 	font-size: smaller;
 	text-align: center
+}
+
+
+/*
+ *	Media part
+ *
+ */
+ 
+@media (max-width: 720px) {
+  html, body, #menu{
+  		width: 100%;
+  		margin: 0;
+   }
 }
