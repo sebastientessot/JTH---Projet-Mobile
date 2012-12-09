@@ -7,9 +7,10 @@ function goToMenu(event){
 		document.body.style.overflowY = "hidden";
 		menuIsVisible = true;
 		
+		
 		for(var i =0 ; i < recipesList.length; i++){
 			recipesList[i].removeEventListener("click", goToPage, false);
-			recipesList[i].removeEventListener("touch", goToPage, false);
+			recipesList[i].removeEventListener("touchstart", goToPage, false);
 		}
 	}
 	event.preventDefault();

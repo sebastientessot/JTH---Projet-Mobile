@@ -1,5 +1,5 @@
 function goToPage(event){
-	if(document.getElementById("content").style.left == "0px"){
+	if(document.getElementById("content").style.left == "0px" || document.getElementById("content").style.left == ""){
 		var elmt = event.target;
 		while(elmt.getAttribute('class') != "recipe"){
 			elmt = elmt.parentNode;
@@ -25,12 +25,12 @@ function goToPage(event){
 
 function subscribe(){
 	for(var i =0 ; i < recipesList.length; i++){
-		recipesList[i].addEventListener("touch", goToPage, false); 	
+		recipesList[i].addEventListener("touchstart", goToPage, false); 	
 		recipesList[i].addEventListener("click", goToPage, false); 	
 	}
 	
-	document.getElementById("menuButton").addEventListener("click", function (event) {goToMenu(event)}, false); 
-	document.getElementById("menuButton").addEventListener("touch", function(event){goToMenu(event); event.preventDefault();}, false); 
+	document.getElementById("menuButton").addEventListener("mouseup", goToMenu, false); 
+	document.getElementById("menuButton").addEventListener("touchend", goToMenu, false); 
 }
 	
 
