@@ -1,17 +1,20 @@
-// TODO : Gerer le bug de quand on en coche 2 differents ! 
-
 var checkList  = document.getElementsByClassName("checkButton");
+
+var isChecked = false; 
 
 document.getElementById("chrono").style.display = 'none'; 
 
 function checkTheBox(elmt){
-	
+			
 	if(elmt.style.backgroundImage == ""){
-		elmt.setAttribute("style", "background-image: url(\"picture/Check.png\"); background-size: cover;");
+		var ok = startingTheChrono(event.target.id.substr(1, 2), event.target.id.substr(0, 1)); 
+		if (ok == true){
+			elmt.setAttribute("style", "background-image: url(\"picture/Check.png\"); background-size: cover;");
 		elmt.style.border = "solid 1px green";
 		elmt.innerHTML = "";
-		startingTheChrono(event.target.id.substr(1, 2), event.target.id.substr(0, 1)); 
-	}else{
+		}		 
+	}
+	else{ 
 		elmt.style.backgroundImage = "";
 		elmt.innerHTML = "Done";
 		elmt.style.border = "solid 1px black";
@@ -31,57 +34,48 @@ var sec;
 	This function decides if we have to be redirected to the startTheChrono function or not. 
 */
 function startingTheChrono(time, id){
-	
-	// if time == -1 there is not chronometer to start. 
+	// if time == -1 there is not chronometer to start.  
 	if(time != -1){ 
 		// at the beginning of this function, I want to have the pause variable at false; 
 		if (pause == true){
-			pause = false; 
+			pause = false;
 		}
-		
 		// if buttonID is not null, if means a chronometer is already running
 		if (buttonID != id ){
 			if(buttonID == null){
 				buttonID = id;
 				afficher = true; 
 				startTheChrono(time); 
+				return true; 
 			}
 			else {
-				alert("Another Chronometer is already running"); 
+				alert("Another Chronometer is already running");
+				return false;  
 			}  
 		}
 		// if we enter in the "else", it means that buttonID == id, so we want to stop the chronometer 
-		/*else {
-				
-			alert("The time won't be saved");
-			pause = true;  
-			hours = 0; 
-			min = 0; 
-			sec = 0; 
-	
-			buttonID = null; 
-			var output = document.getElementById("chronoNumber");
-			document.getElementById("chrono").style.display = 'none'; 
-			afficher = false; 
-		}*/
+
 	}
+	return true; 
 
 }
 
-function stoppingTheChrono(time, id){
-	if (time !=-1){
-		alert("The time won't be saved");
-	}
-	//alert("The time won't be saved");
-	pause = true;  
-	hours = 0; 
-	min = 0; 
-	sec = 0; 
+function stoppingTheChrono(time, id){ 
 
-	buttonID = null; 
-	var output = document.getElementById("chronoNumber");
-	document.getElementById("chrono").style.display = 'none'; 
-	afficher = false; 
+	if (time !=-1){
+	
+		alert("The time won't be saved");
+		pause = true;  
+		hours = 0; 
+		min = 0; 
+		sec = 0; 
+	
+		buttonID = null; 
+		var output = document.getElementById("chronoNumber");
+		document.getElementById("chrono").style.display = 'none'; 
+		afficher = false; 
+	}
+
 }
 
 function startTheChrono(time){
