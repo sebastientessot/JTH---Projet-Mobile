@@ -22,7 +22,7 @@ function backToContent(event){
 		
 		event.preventDefault();
 		
-		subscribe();
+		setTimeout(subscribe, 200);
 		menuIsVisible = false;
 	}
 	event.preventDefault();
