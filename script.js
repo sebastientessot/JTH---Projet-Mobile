@@ -48,6 +48,11 @@ function goToDessert(event){
 	event.preventDefault();
 }
 
+function goToHome(event){
+	window.location = "index.html";
+	event.preventDefault();
+}
+
 
 document.getElementById("content").addEventListener("mousedown", backToContent ,false);
 document.getElementById("content").addEventListener("touchstart", backToContent ,false);
@@ -63,3 +68,6 @@ document.getElementById("entree").addEventListener("touchstart", goToEntree ,fal
 
 document.getElementById("dessert").addEventListener("mousedown", goToDessert ,false);
 document.getElementById("dessert").addEventListener("touchstart", goToDessert ,false);
+
+document.getElementById("home").addEventListener("mousedown", goToHome ,false);
+document.getElementById("home").addEventListener("touchstart", goToHome ,false);
