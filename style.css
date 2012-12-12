@@ -230,7 +230,7 @@ h3{
 	float: left;
 }
 
-.titleRecipe{
+#titleRecipe{
 	padding-top: 15px; 
 	text-align: center; 
 	font: bold large sans-serif;
@@ -256,7 +256,7 @@ h3{
 	text-align: center; 
 }
 .ingredientRecipe{
-	padding-top: 20px; 
+	padding-top: 35px; 
 	min-height: 125px; 
 }
 .ingredient{
@@ -303,6 +303,28 @@ h3{
 	border-radius: 10px;
 	border: 1px solid #c82929;
 	box-shadow: 4px 4px 10px black
+}
+
+#emptyStars{
+	position: absolute;
+	top: 120px;   
+	left: 65%; 
+	width: 125px;
+	height: 25px;  
+	background-image: url("picture/empty stars.png");
+}
+
+#notEmptyStars{
+	height: 25px;  
+	background-image: url("picture/not empty stars.png");
+}
+
+.fourStars{
+	width: 100px; 
+}
+
+.threeStars{
+	width: 75px; 
 }
 
 

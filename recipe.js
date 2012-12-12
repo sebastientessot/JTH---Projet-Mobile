@@ -121,7 +121,6 @@ var output = document.getElementById("chronoNumber");
 		setTimeout(startTheChrono, 1000); 
 	}
 }
-
  
 for(var i =0 ; i < checkList.length; i++){
 	checkList[i].addEventListener("touch", function (event){
