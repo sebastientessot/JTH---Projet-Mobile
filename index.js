@@ -1,3 +1,5 @@
+(function($){
+
 function goToPage(event){
 	if(document.getElementById("content").style.left == "0px" || document.getElementById("content").style.left == ""){
 		var elmt = event.target;
@@ -29,9 +31,17 @@ function subscribe(){
 		recipesList[i].addEventListener("click", goToPage, false); 	
 	}
 	
-	document.getElementById("menuButton").addEventListener("mouseup", goToMenu, false); 
-	document.getElementById("menuButton").addEventListener("touchend", goToMenu, false); 
+	$("#menuButton").bind({
+		click: function(){
+			goToMenu();
+		},
+		tap: function(){
+			goToMenu();
+		}
+	});
 }
 	
 
 subscribe();
+
+})(jQuery);

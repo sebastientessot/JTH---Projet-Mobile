@@ -9,15 +9,12 @@ html, body{
 	padding: 0;
 	background: #c9c9c9;
 	overflow-x: hidden;
-	overflow-y: scroll;
 }
 
 body{
 	width: 500px;
 	margin: 0 auto 0 auto;
 	background: #333;
-	overflow-x: hidden;
-	overflow-y: scroll;
 }
 
 li{
@@ -34,8 +31,8 @@ li{
 	height: 100%; 
 	min-height: 100%;
 	background: #e5d2a7;
-	-webkit-transition: left 1s;
-	-o-transition: left linear 1s;
+	-webkit-transition: left 0.8s;
+	-o-transition: left linear 0.8s;
 	z-index: 2;
 	left: 0px;
 }
@@ -62,6 +59,15 @@ li{
 	padding-right: 50px;
 }
 
+#menuTitle{
+	margin-left: 33%;
+	padding-bottom: 10px;
+	color: #555;
+	font-family: "Georgia", "Arial", sans-serif;
+	font-size: 26px;
+	text-align: center;
+}
+
 #menuButton{
 	background: url("picture/sprite.png");
 	background-position: 0 -20px;
@@ -74,9 +80,13 @@ li{
 }
 
 #menu{
+	min-height: 100%;
+	height: 100%;
+	background: #333;
 	width: 500px;
 	position: absolute;
 	z-index: 1;
+	text-shadow: none;
 }
 
 #search{
@@ -92,12 +102,13 @@ li{
 	height: 25px;
 	border-radius: 10px;
 	width: 80%;
+	text-shadow: none;
 }
 
 .menuList{
 	height: 40px;
 	color: #aaa;
-	width: 100%;
+	width: 83%;
 	padding-top: 15px;
 	padding-left: 15px;
 	font-size: 23px;
@@ -336,7 +347,7 @@ h3{
  *
  */
  
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   html, body, #menu{
   		width: 100%;
   		margin: 0;
