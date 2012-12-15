@@ -8,6 +8,8 @@ html, body{
 	margin: 0;
 	padding: 0;
 	background: #c9c9c9;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 body{
@@ -15,6 +17,7 @@ body{
 	margin: 0 auto 0 auto;
 	background: #333;
 	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 li{
@@ -337,5 +340,6 @@ h3{
   html, body, #menu{
   		width: 100%;
   		margin: 0;
+  		padding: 0;
    }
 }

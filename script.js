@@ -3,8 +3,8 @@ var recipesList = document.getElementsByClassName("recipe");
 
 function goToMenu(event){
 	if(menuIsVisible == false){
-		document.getElementById("content").style.left = "85%";
 		document.body.style.overflowY = "hidden";
+		document.getElementById("content").style.left = "85%";
 		menuIsVisible = true;
 		
 		for(var i =0 ; i < recipesList.length; i++){
@@ -17,8 +17,8 @@ function goToMenu(event){
 
 function backToContent(event){
 	if(menuIsVisible){
+		document.body.style.overflowY = "scroll";
 		document.getElementById("content").style.left = "0";
-		document.body.style.overflowY = "visible";
 		
 		event.preventDefault();
 		
@@ -57,17 +57,17 @@ function goToHome(event){
 document.getElementById("content").addEventListener("mousedown", backToContent ,false);
 document.getElementById("content").addEventListener("touchstart", backToContent ,false);
 
-document.getElementById("cocktail").addEventListener("mousedown", goToCocktail ,false);
-document.getElementById("cocktail").addEventListener("touchstart", goToCocktail ,false);
+document.getElementById("cocktail").addEventListener("click", goToCocktail ,false);
+document.getElementById("cocktail").addEventListener("touch", goToCocktail ,false);
 
-document.getElementById("appetizer").addEventListener("mousedown", goToAppetizer ,false);
-document.getElementById("appetizer").addEventListener("touchstart", goToAppetizer ,false);
+document.getElementById("appetizer").addEventListener("click", goToAppetizer ,false);
+document.getElementById("appetizer").addEventListener("touch", goToAppetizer ,false);
 
-document.getElementById("entree").addEventListener("mousedown", goToEntree ,false);
-document.getElementById("entree").addEventListener("touchstart", goToEntree ,false);
+document.getElementById("entree").addEventListener("click", goToEntree ,false);
+document.getElementById("entree").addEventListener("touch", goToEntree ,false);
 
-document.getElementById("dessert").addEventListener("mousedown", goToDessert ,false);
-document.getElementById("dessert").addEventListener("touchstart", goToDessert ,false);
+document.getElementById("dessert").addEventListener("click", goToDessert ,false);
+document.getElementById("dessert").addEventListener("touch", goToDessert ,false);
 
-document.getElementById("home").addEventListener("mousedown", goToHome ,false);
-document.getElementById("home").addEventListener("touchstart", goToHome ,false);
+document.getElementById("home").addEventListener("click", goToHome ,false);
+document.getElementById("home").addEventListener("touch", goToHome ,false);

@@ -25,7 +25,7 @@ function goToPage(event){
 
 function subscribe(){
 	for(var i =0 ; i < recipesList.length; i++){
-		recipesList[i].addEventListener("touchstart", goToPage, false); 	
+		recipesList[i].addEventListener("touchend", goToPage, false); 	
 		recipesList[i].addEventListener("click", goToPage, false); 	
 	}
 	
