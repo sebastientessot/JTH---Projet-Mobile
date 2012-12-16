@@ -209,6 +209,7 @@ h3{
 }
 
 .recipe{
+	overflow: hidden;
 	background: white;
 	padding: 8px;
 	margin-bottom: 20px;
