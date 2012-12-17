@@ -322,8 +322,8 @@ h3{
 
 #emptyStars{
 	position: absolute;
-	top: 120px;   
-	left: 65%; 
+	top: 110px;   
+	right: 25px; 
 	width: 125px;
 	height: 25px;  
 	background-image: url("picture/empty stars.png");
